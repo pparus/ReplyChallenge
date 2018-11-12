@@ -1,3 +1,2 @@
 H2 console:
  - http://localhost:8080/h2
- - jdbc url: jdbc:h2:./db/fizo_db
