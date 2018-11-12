@@ -1,0 +1,25 @@
+<h1>Vehicle Management</h1>
+<app-vehicle-diagram [vehicles]=allVehicles>
+
+</app-vehicle-diagram>
+<div>
+  <table border="1">
+    <tr>
+      <th>Vehicle Id</th>
+      <th>Model</th>
+      <th>Engine</th>
+      <th>Infotainment</th>
+      <th>Design</th>
+      <th>Current position</th>
+    </tr>
+    <tr *ngFor="let car of allVehicles">
+      <td>{{car.vehicleId}}</td>
+      <td>{{car.model}}</td>
+      <td>{{car.engine}}</td>
+      <td>{{car.infotainment}}</td>
+      <td>{{car.design}}</td>
+      <td>{{car.currentPosition}}</td>            
+    </tr>
+  </table>
+
+</div>

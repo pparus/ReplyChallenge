@@ -1,0 +1,23 @@
+<h1>User Management Service</h1>
+<div>
+  <button routerLink="new">Create new user</button>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Mail</th>
+      <th>Age</th>
+      <th>Gender</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{user.name}}</td>
+      <td>{{user.mail}}</td>
+      <td>{{user.age}}</td>
+      <td>{{user.gender}}</td>
+      <td>
+        <button [routerLink]="user.userId">Edit</button>
+        <span> | </span>
+        <button (click)="removeUser(user.userId)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>

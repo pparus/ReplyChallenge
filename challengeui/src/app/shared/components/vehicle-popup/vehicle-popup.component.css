@@ -1,0 +1,8 @@
+:host {
+    background-color: lightblue;
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 100px;
+    z-index: 1000;
+}

@@ -1,0 +1,24 @@
+<button routerLink="..">Back</button>
+
+<form [formGroup]="userForm" (submit)="submitForm()">
+  <div>
+    <input type="text" placeholder="username" formControlName="username">
+  </div>
+  <div>
+    <input type="text" placeholder="email" formControlName="email">
+  </div>
+  <div>
+    <input type="number" placeholder="age" formControlName="age">
+  </div>
+  <div>
+    <select formControlName="gender">
+      <option value="MALE">Male</option>
+      <option value="FEMALE">Female</option>
+      <option value="UNKNOWN">Unknown</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="userForm.valid === false">
+    {{ userId === 'new' ? 'Create' : 'Update' }}
+  </button>
+</form>

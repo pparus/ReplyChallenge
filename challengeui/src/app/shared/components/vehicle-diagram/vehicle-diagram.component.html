@@ -1,0 +1,26 @@
+<div *ngIf="vehicles; else empty" id="vehicles">
+  <div id="diagram">
+    <div id="axis"></div>
+    <div id="marker">
+      <div>0</div>
+      <div>25</div>
+      <div>50</div>
+      <div>75</div>
+      <div>100</div>
+    </div>
+  </div>
+
+
+  <div class="vehicle" *ngFor="let vehicle of vehicles" [ngStyle]="{ 'left': vehicle.currentPosition + '%' }" 
+  (mouseover)="mouseOver = vehicle.vehicleId" (mouseleave)="mouseOver = null">
+
+    <span *ngIf="mouseOver !== vehicle.vehicleId">{{ vehicle.vehicleId }} </span>
+  
+    <app-vehicle-popup [vehicle]="vehicle" *ngIf="mouseOver === vehicle.vehicleId"></app-vehicle-popup>
+  
+  </div>
+</div>
+
+<ng-template #empty>
+  No vehicles found!
+</ng-template>
